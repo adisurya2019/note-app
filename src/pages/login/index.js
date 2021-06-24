@@ -4,6 +4,8 @@ import { logo } from '../../assets'
 import { login, subscribeToAuth } from '../../controller/loginController'
 import { blackish, orangeish } from '../../color/Color'
 import { color } from 'react-native-reanimated';
+
+
 export default function Login({ navigation }) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -23,9 +25,8 @@ export default function Login({ navigation }) {
       <ScrollView>
         <View style={styles.background}>
           
-          <Text style={styles.judul}>DESSERT CAMP</Text>
+          <Text style={styles.judul}>TO DO LIST</Text>
 
-          <Text style={styles.textHeadline}>Login</Text>
           <View style={styles.inputView}>
             <View style={styles.textInputView}>
               
@@ -45,15 +46,15 @@ export default function Login({ navigation }) {
                 onChangeText={(text) => setPassword(text)}
                 secureTextEntry={true}
               />
-              <View style={styles.twoside}>
+              <View style={{marginTop: 110}}>
               <TouchableOpacity onPress={nosePressed}>
                 <View style={styles.loginView}>
-                  <Text style={styles.textHeadlineTwo}>SignIn</Text>
+                  <Text style={styles.textHeadlineTwo}>login</Text>
                 </View>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
                 <View style={styles.loginView}>
-                  <Text style={styles.textHeadlineTwo}>Register</Text>
+                  <Text style={styles.textHeadlineTwo}>register</Text>
                 </View>
               </TouchableOpacity>
               </View>
@@ -71,24 +72,18 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#ffc2b4'
-
-  },
-  logo: {
-    marginTop: 50,
-    height: 200,
-    width: 200
+    backgroundColor: 'white'
   },
   judul: {
-    marginTop: 10,
-    marginBottom: 50,
+    marginTop: 170,
+    marginBottom: 100,
     fontSize: 30,
     fontWeight: 'bold',
     color: 'black'
   },
   container: {
     flex: 1,
-    backgroundColor: '#ffc2b4',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'space-evenly',
   },
@@ -97,10 +92,10 @@ const styles = StyleSheet.create({
     color: '#000'
   },
   textInput: {
-    width: 300,
+    width: 350,
     height: 50,
     borderWidth: 2,
-    borderRadius: 50,
+    borderRadius: 15,
     borderColor: '#000',
     margin: 10,
     textAlign: 'center'
@@ -112,7 +107,7 @@ const styles = StyleSheet.create({
     color: '#777'
   },
   textHeadline: {
-    fontSize: 30,
+    fontSize: 20,
     alignSelf: 'center',
     fontWeight: "700",
     margin: 10
@@ -120,10 +115,10 @@ const styles = StyleSheet.create({
   loginView: {
     margin: 10,
     backgroundColor: blackish,
-    width: 100,
+    width: 350,
     height: 55,
     borderWidth: 3,
-    borderRadius: 25,
+    borderRadius: 15,
     alignSelf: 'center'
   },
   textHeadlineTwo: {
@@ -133,18 +128,4 @@ const styles = StyleSheet.create({
     margin: 10,
     color: "white",
   },
-  twoside:{
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  header: {
-    // flex : 0.2,
-    width: "100%",
-
-  },
-  footer: {
-    // flex : 0.2,
-    width: "100%"
-  }
 })
