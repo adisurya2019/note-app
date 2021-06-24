@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native'
 import { signOut } from '../../controller/loginController'
 
 export default function home({navigation}) {
@@ -11,7 +11,23 @@ export default function home({navigation}) {
             <View >
                 <Text style={styles.teks}>CATATAN</Text>
             </View>
-            <View style={{ marginTop: 530 }}>
+                <ScrollView >
+                    <View>
+                    <Text style={styles.card}>ini catatan</Text>
+                    <Text style={styles.card}>ini catatan</Text>
+                    <Text style={styles.card}>ini catatan</Text>
+                    <Text style={styles.card}>ini catatan</Text>
+                    <Text style={styles.card}>ini catatan</Text>
+                    <Text style={styles.card}>ini catatan</Text>
+                    <Text style={styles.card}>ini catatan</Text>
+                    <Text style={styles.card}>ini catatan</Text>
+                    <Text style={styles.card}>ini catatan</Text>
+                    <Text style={styles.card}>ini catatan</Text>
+                    <Text style={styles.card}>ini catatan</Text>
+                    <Text style={styles.card}>ini catatan</Text>
+                    </View>
+                </ScrollView>
+            <View style={{ marginTop: 20, marginBottom: 10 }}>
                 <TouchableOpacity onPress={() => navigation.navigate("ADD")}>
                     <View style={styles.luar}>
                         <Text style={styles.dalam}>
@@ -32,7 +48,7 @@ const styles = StyleSheet.create({
     teks: {
         marginLeft: 20,
         marginTop: 25,
-        marginBottom: 100,
+        marginBottom: 30,
         fontSize: 30,
         fontWeight: 'bold',
         color: 'black'
@@ -50,6 +66,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginLeft: 11
+    },
+    card: {
+        padding: 50,
+                        borderWidth: 2,
+                        borderRadius: 15,
+                        borderColor: '#000',
+                        margin: 10,
+                        textAlign: 'center'
     }
 });
 
