@@ -1,30 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
+import Axios from 'axios'
 
-export default function addNote ({navigation}) {
+const addNote = ({navigation}) => {
+  const [title, setTitle] = useState ("");
+  const [deskripsi, setDeskripsi] = useState ("");
+  
+  const submit = () => {
+    const data ={
+      title,
+      deskripsi
+    }
+    Axios.post('http://192.168.43.242:8081/notes', data)
+    .then(res => {
+      console.log('res: ', res);
+      setTitle("");
+      setDeskripsi("");
+    })
+  }
     return (
         <View style={styles.background}>
             <View style={styles.textInputView}>
                 <TextInput style={styles.textInput}
                 placeholder="Enter Title"
                 placeholderTextColor={'black'}
+                value={title}
+                onChangeText ={(value) => setTitle(value)}
                 />
             </View>
             <View style={styles.textInputView}>
                 <TextInput style={styles.textInput2}
                 placeholder="Enter Description"
                 placeholderTextColor={'black'}
+                value={deskripsi}
+                onChangeText ={(value) => setDeskripsi(value)}
                 />
             </View>
-            <View>
-                <TouchableOpacity style={styles.loginView} onPress={() => navigation.navigate("home")}>
+            <View onPress={() => navigation.navigate("home")}>
+                <TouchableOpacity style={styles.loginView} onPress={submit}>
                     <Text style={styles.textForInput}>SAVE</Text>
                 </TouchableOpacity>
             </View>
         </View>
     )
 }
-
+export default addNote
 
 const styles = StyleSheet.create({
     background: {
