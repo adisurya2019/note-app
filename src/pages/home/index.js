@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native'
 import { signOut } from '../../controller/loginController'
-import TombolAdd from '../../components/addButton'
+
 
 export default function home({ navigation }) {
     function signedOut(navigation) {
@@ -14,21 +14,49 @@ export default function home({ navigation }) {
             </View>
             <ScrollView >
                 <View>
-                    <Text style={styles.card}>ini catatan</Text>
-                    <Text style={styles.card}>ini catatan</Text>
-                    <Text style={styles.card}>ini catatan</Text>
-                    <Text style={styles.card}>ini catatan</Text>
-                    <Text style={styles.card}>ini catatan</Text>
-                    <Text style={styles.card}>ini catatan</Text>
-                    <Text style={styles.card}>ini catatan</Text>
-                    <Text style={styles.card}>ini catatan</Text>
-                    <Text style={styles.card}>ini catatan</Text>
-                    <Text style={styles.card}>ini catatan</Text>
-                    <Text style={styles.card}>ini catatan</Text>
-                    <Text style={styles.card}>ini catatan</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate("EDIT")}>
+                        <View style={styles.card}>
+                            <Text style={styles.teksCard}>ini catatan</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View>
+                    <TouchableOpacity onPress={() => navigation.navigate("EDIT")}>
+                        <View style={styles.card}>
+                            <Text style={styles.teksCard}>ini catatan</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View>
+                    <TouchableOpacity onPress={() => navigation.navigate("EDIT")}>
+                        <View style={styles.card}>
+                            <Text style={styles.teksCard}>ini catatan</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View>
+                    <TouchableOpacity onPress={() => navigation.navigate("EDIT")}>
+                        <View style={styles.card}>
+                            <Text style={styles.teksCard}>ini catatan</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View>
+                    <TouchableOpacity onPress={() => navigation.navigate("EDIT")}>
+                        <View style={styles.card}>
+                            <Text style={styles.teksCard}>ini catatan</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View>
+                    <TouchableOpacity onPress={() => navigation.navigate("EDIT")}>
+                        <View style={styles.card}>
+                            <Text style={styles.teksCard}>ini catatan</Text>
+                        </View>
+                    </TouchableOpacity>
                 </View>
             </ScrollView>
-            <View style={{marginBottom: 10, padding: 0 }}>
+            <View style={{ marginBottom: 10, padding: 0 }}>
                 <TouchableOpacity onPress={() => navigation.navigate("ADD")}>
                     <View style={styles.luar}>
                         <Text style={styles.dalam}>
@@ -74,6 +102,9 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         borderColor: '#000',
         margin: 10,
+
+    },
+    teksCard: {
         textAlign: 'center'
     }
 });

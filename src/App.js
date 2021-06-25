@@ -5,7 +5,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TombolAdd } from './components';
-import { SignUp, Login, home, addNote } from './pages';
+import { SignUp, Login, home, addNote, editNote} from './pages';
 
 const Stack = createStackNavigator();
 
@@ -17,6 +17,7 @@ export default function App() {
         <Stack.Screen name="SignUp" component={SignUp} options={{headerShown: false}} />
         <Stack.Screen name="home" component={home} options={{headerShown: false}} />
         <Stack.Screen name="ADD" component={addNote} />
+        <Stack.Screen name="EDIT" component={editNote} />
       </Stack.Navigator>
     </NavigationContainer>
   );
