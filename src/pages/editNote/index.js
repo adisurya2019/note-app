@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     },
     container: {
       flex: 1,
-      backgroundColor: 'white',
+      backgroundColor: '#F0F0F0',
       alignItems: 'center',
       justifyContent: 'space-evenly',
     },
@@ -59,20 +59,22 @@ const styles = StyleSheet.create({
     textInput: {
       width: 390,
       height: 50,
-      borderWidth: 2,
+      borderWidth: 1,
       borderRadius: 15,
       borderColor: '#777',
       margin: 10,
-      textAlign: 'center'
+      textAlign: 'center',
+      backgroundColor: '#f0f0f0'
     },
     textInput2: {
         width: 390,
         height: 400,
-        borderWidth: 2,
+        borderWidth: 1,
         borderRadius: 15,
         borderColor: '#777',
         margin: 10,
-        textAlign: 'center'
+        textAlign: 'center',
+        backgroundColor: '#f0f0f0'
       },
     textForInput: {
       fontSize: 20,

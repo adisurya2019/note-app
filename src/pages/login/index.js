@@ -92,13 +92,14 @@ const styles = StyleSheet.create({
     color: '#000'
   },
   textInput: {
-    width: 350,
+    width: 390,
     height: 50,
-    borderWidth: 2,
+    borderWidth: 1,
     borderRadius: 15,
-    borderColor: '#000',
+    borderColor: '#777',
     margin: 10,
-    textAlign: 'center'
+    textAlign: 'center',
+    backgroundColor: '#f0f0f0'
   },
   textForInput: {
     fontSize: 20,
@@ -128,4 +129,5 @@ const styles = StyleSheet.create({
     margin: 10,
     color: "white",
   },
+  
 })
