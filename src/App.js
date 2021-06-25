@@ -4,7 +4,7 @@ import * as React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
+import { TombolAdd } from './components';
 import { SignUp, Login, home, addNote } from './pages';
 
 const Stack = createStackNavigator();
