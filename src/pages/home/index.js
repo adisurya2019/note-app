@@ -8,6 +8,17 @@ import { not } from 'react-native-reanimated'
 
 
 const home = ({ navigation }) => {
+    const selectItem = (notes) => {
+        console.log('selected item: ', notes);
+    }
+    const deleteNote = (notes) => {
+        console.log(notes);
+        Axios.delete(`http://192.168.43.242:8081/notes/${notes.id}`)
+            .then(res => {
+                console.log('res delete: ', res);
+                getData();
+            })
+    }
     const [refreshing, setRefreshing] = useState(false);
     const onRefresh = () => {
         setRefreshing(true);
@@ -17,16 +28,22 @@ const home = ({ navigation }) => {
             alert('selesai');
         }, 200);
     }
-    const Notes = ({ title, deskripsi }) => {
+    const Notes = ({ title, deskripsi, onPress, onDelete }) => {
         return (
             <View>
                 <View>
-                    <TouchableOpacity onPress={() => navigation.navigate("EDIT")}>
-                        <View style={styles.card}>
-                            <Text style={styles.teksCardJudul}>{title}</Text>
-                            <Text style={styles.teksCard}>{deskripsi}</Text>
-                        </View>
-                    </TouchableOpacity>
+                    <View style={styles.card}>
+                        <TouchableOpacity onPress={onPress}>
+                            <View>
+                                <Text style={styles.teksCardJudul}>{title}</Text>
+                                <Text style={styles.teksCard}>{deskripsi}</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={onDelete}>
+                            <Text style={{ textAlign: 'center', marginTop: 35, color: 'red', fontWeight: 'bold' }}>DELETE</Text>
+                        </TouchableOpacity>
+                    </View>
+
                 </View>
             </View>
         )
@@ -60,7 +77,13 @@ const home = ({ navigation }) => {
                 }
             >
                 {notes.map(note => {
-                    return <Notes key={note.id} title={note.title} deskripsi={note.deskripsi} />
+                    return <Notes
+                        key={note.id}
+                        title={note.title}
+                        deskripsi={note.deskripsi}
+                        onPress={() => selectItem(note)}
+                        onDelete={() => deleteNote(note)}
+                    />
                 })}
 
             </ScrollView >
@@ -107,7 +130,7 @@ const styles = StyleSheet.create({
         marginLeft: 11
     },
     card: {
-        padding: 50,
+        padding: 15,
         borderWidth: 2,
         borderRadius: 15,
         borderColor: '#000',
