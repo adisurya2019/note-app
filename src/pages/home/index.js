@@ -25,7 +25,6 @@ const home = ({ navigation }) => {
         setTimeout(() => {
             setRefreshing(false);
             getData();
-            alert('selesai');
         }, 200);
     }
     const Notes = ({ title, deskripsi, onPress, onDelete }) => {
