@@ -21,10 +21,11 @@ const addNote = ({ navigation }) => {
   }
   return (
     <View style={styles.background}>
+      <View style={{marginTop: 25}} >
       <View style={styles.textInputView}>
         <TextInput style={styles.textInput}
           placeholder="Enter Title"
-          placeholderTextColor={'black'}
+          placeholderTextColor={'white'}
           value={title}
           onChangeText={(value) => setTitle(value)}
         />
@@ -32,15 +33,16 @@ const addNote = ({ navigation }) => {
       <View style={styles.textInputView}>
         <TextInput style={styles.textInput2}
           placeholder="Enter Description"
-          placeholderTextColor={'black'}
+          placeholderTextColor={'white'}
           value={deskripsi}
           onChangeText={(value) => setDeskripsi(value)}
         />
       </View>
-      <View onPress={() => navigation.navigate("home")}>
+      <View>
         <TouchableOpacity style={styles.loginView} onPress={submit}>
           <Text style={styles.textForInput}>SAVE</Text>
         </TouchableOpacity>
+      </View>
       </View>
     </View>
   )
@@ -52,7 +54,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
 
-    backgroundColor: 'white'
+    backgroundColor: '#1E1A3C'
   },
   judul: {
     marginTop: 170,
@@ -74,22 +76,22 @@ const styles = StyleSheet.create({
   textInput: {
     width: 390,
     height: 50,
-    borderWidth: 1,
+    borderWidth: 0,
     borderRadius: 15,
     borderColor: '#777',
     margin: 10,
     textAlign: 'center',
-    backgroundColor: '#f0f0f0'
+    backgroundColor: '#3E3364'
   },
   textInput2: {
     width: 390,
     height: 400,
-    borderWidth: 1,
+    borderWidth: 0,
     borderRadius: 15,
     borderColor: '#777',
     margin: 10,
     textAlign: 'center',
-    backgroundColor: '#f0f0f0'
+    backgroundColor: '#3E3364'
   },
   textForInput: {
     fontSize: 20,
@@ -107,10 +109,10 @@ const styles = StyleSheet.create({
   },
   loginView: {
     margin: 10,
-    backgroundColor: 'black',
+    backgroundColor: '#3E3364',
     width: 350,
     height: 55,
-    borderWidth: 3,
+    borderWidth: 0,
     borderRadius: 15,
     alignSelf: 'center',
     marginTop: 140

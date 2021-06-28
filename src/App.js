@@ -16,7 +16,7 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} options={{headerShown: false}} />
         <Stack.Screen name="SignUp" component={SignUp} options={{headerShown: false}} />
         <Stack.Screen name="home" component={home} options={{headerShown: false}} />
-        <Stack.Screen name="ADD" component={addNote} />
+        <Stack.Screen name="ADD" component={addNote} options={{headerTintColor: "white", headerStyle:{backgroundColor: '#3E3364'}}} />
         <Stack.Screen name="EDIT" component={editNote} />
       </Stack.Navigator>
     </NavigationContainer>

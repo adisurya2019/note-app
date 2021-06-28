@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, RefreshControl } from 'react-native'
-import { signOut } from '../../controller/loginController'
 import Axios from 'axios'
 import { data } from 'browserslist'
-import { not } from 'react-native-reanimated'
 
 
 
@@ -104,7 +102,7 @@ export default home
 const styles = StyleSheet.create({
     background: {
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: '#1E1A3C'
     },
     teks: {
         marginLeft: 20,
@@ -112,13 +110,15 @@ const styles = StyleSheet.create({
         marginBottom: 30,
         fontSize: 30,
         fontWeight: 'bold',
-        color: 'black'
+        color: '#fff'
     },
     luar: {
         padding: 15,
+        borderWidth:2,
+        borderColor: '#fff',
         borderRadius: 60,
         fontWeight: 'bold',
-        backgroundColor: 'black',
+        backgroundColor: '#3E3364',
         marginHorizontal: 170
     },
     dalam: {
@@ -130,20 +130,23 @@ const styles = StyleSheet.create({
     },
     card: {
         padding: 15,
-        borderWidth: 2,
+        borderWidth: 0,
         borderRadius: 15,
-        borderColor: '#000',
+        borderColor: '#fff',
         margin: 10,
+        backgroundColor: '#3E3364'
 
     },
     teksCardJudul: {
         textAlign: 'center',
         fontSize: 21,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: '#fff'
     },
     teksCard: {
         textAlign: 'center',
         fontSize: 14,
+        color: '#fff'
     }
 });
 

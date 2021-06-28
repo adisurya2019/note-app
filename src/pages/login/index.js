@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ScrollView } from 'react-native';
-import { logo } from '../../assets'
 import { login, subscribeToAuth } from '../../controller/loginController'
-import { blackish, orangeish } from '../../color/Color'
-import { color } from 'react-native-reanimated';
 
 
 export default function Login({ navigation }) {
@@ -25,14 +22,14 @@ export default function Login({ navigation }) {
       <ScrollView>
         <View style={styles.background}>
           
-          <Text style={styles.judul}>TO DO LIST</Text>
+          <Text style={styles.judul}>NOTE APP</Text>
 
           <View style={styles.inputView}>
             <View style={styles.textInputView}>
               
               <TextInput style={styles.textInput}
                 placeholder="Enter Email"
-                placeholderTextColor={blackish}
+                placeholderTextColor={'white'}
                 value={email}
                 onChangeText={(text) => setEmail(text)}
               />
@@ -41,12 +38,12 @@ export default function Login({ navigation }) {
               
               <TextInput style={styles.textInput}
                 placeholder="Enter password"
-                placeholderTextColor={blackish}
+                placeholderTextColor={'white'}
                 value={password}
                 onChangeText={(text) => setPassword(text)}
                 secureTextEntry={true}
               />
-              <View style={{marginTop: 110}}>
+              <View style={{marginTop: 160}}>
               <TouchableOpacity onPress={nosePressed}>
                 <View style={styles.loginView}>
                   <Text style={styles.textHeadlineTwo}>login</Text>
@@ -71,41 +68,53 @@ const styles = StyleSheet.create({
   background: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white'
+
+    backgroundColor: '#1E1A3C'
   },
   judul: {
     marginTop: 170,
     marginBottom: 100,
     fontSize: 30,
     fontWeight: 'bold',
-    color: 'black'
+    color: 'white'
   },
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#1E1A3C',
     alignItems: 'center',
     justifyContent: 'space-evenly',
   },
   textInputView: {
-    
+
     color: '#000'
   },
   textInput: {
     width: 390,
     height: 50,
-    borderWidth: 1,
+    borderWidth: 0,
     borderRadius: 15,
     borderColor: '#777',
     margin: 10,
     textAlign: 'center',
-    backgroundColor: '#f0f0f0'
+    backgroundColor: '#3E3364'
+  },
+  textInput2: {
+    width: 390,
+    height: 400,
+    borderWidth: 0,
+    borderRadius: 15,
+    borderColor: '#777',
+    margin: 10,
+    textAlign: 'center',
+    backgroundColor: '#3E3364'
   },
   textForInput: {
     fontSize: 20,
     alignSelf: 'center',
     fontWeight: "600",
-    color: '#777'
+    textAlign: 'center',
+    color: 'white',
+    marginTop: 10
   },
   textHeadline: {
     fontSize: 20,
@@ -115,12 +124,12 @@ const styles = StyleSheet.create({
   },
   loginView: {
     margin: 10,
-    backgroundColor: blackish,
+    backgroundColor: '#3E3364',
     width: 350,
     height: 55,
-    borderWidth: 3,
+    borderWidth: 0,
     borderRadius: 15,
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
   textHeadlineTwo: {
     fontSize: 20,
@@ -129,5 +138,4 @@ const styles = StyleSheet.create({
     margin: 10,
     color: "white",
   },
-  
 })
