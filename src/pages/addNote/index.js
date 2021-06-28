@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
   },
   textForInput: {
     fontSize: 20,
+    alignItems: 'center',
     alignSelf: 'center',
     fontWeight: "600",
     textAlign: 'center',
@@ -114,6 +115,7 @@ const styles = StyleSheet.create({
     height: 55,
     borderWidth: 0,
     borderRadius: 15,
+    alignItems: 'center',
     alignSelf: 'center',
     marginTop: 140
   },

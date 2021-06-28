@@ -1,11 +1,6 @@
 {
   "notes": [
     {
-      "id": 1,
-      "title": "judul pertama",
-      "deskripsi": "isi pertama"
-    },
-    {
       "title": "Test terakhir",
       "deskripsi": "Sukses :)",
       "id": 20
@@ -16,8 +11,8 @@
       "id": 21
     },
     {
-      "title": "Tugas Mikroprosessor dan Robotika",
-      "deskripsi": "Deadline 1 Juli",
+      "title": "Tugas TM",
+      "deskripsi": "deadline 30 Juni",
       "id": 22
     }
   ]

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, RefreshControl } from 'react-native'
 import Axios from 'axios'
 import { data } from 'browserslist'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Feather from 'react-native-vector-icons/Feather'
 
 
 
@@ -37,7 +39,7 @@ const home = ({ navigation }) => {
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={onDelete}>
-                            <Text style={{ textAlign: 'center', marginTop: 35, color: 'red', fontWeight: 'bold' }}>DELETE</Text>
+                            <MaterialCommunityIcons name={'delete'} size={30} color={'#ff79c6'} style={{ marginTop: 35, alignSelf: 'center' }} />
                         </TouchableOpacity>
                     </View>
 
@@ -88,9 +90,10 @@ const home = ({ navigation }) => {
             <View style={{ marginBottom: 10, padding: 0 }}>
                 <TouchableOpacity onPress={() => navigation.navigate("ADD")}>
                     <View style={styles.luar}>
-                        <Text style={styles.dalam}>
-                            +
-                        </Text>
+                        <View style={styles.dalam}>
+                            <Text style={{color: 'white', fontSize: 20, fontWeight: 'bold', marginLeft:20 }}>TAMBAH CATATAN</Text>
+                            <Feather name={'file-plus'} size={30} color={'#ff79c6'} style={{ alignSelf: 'center', marginRight:20 }} />
+                        </View>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -107,26 +110,23 @@ const styles = StyleSheet.create({
     teks: {
         marginLeft: 20,
         marginTop: 25,
-        marginBottom: 30,
+        marginBottom: 10,
         fontSize: 30,
         fontWeight: 'bold',
         color: '#fff'
     },
     luar: {
-        padding: 15,
-        borderWidth:2,
+        padding: 12,
+        borderWidth: 2,
         borderColor: '#fff',
         borderRadius: 60,
         fontWeight: 'bold',
         backgroundColor: '#3E3364',
-        marginHorizontal: 170
     },
     dalam: {
-        fontSize: 30,
-        color: 'white',
+        flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
-        marginLeft: 11
+        justifyContent: 'space-between'
     },
     card: {
         padding: 15,
@@ -145,6 +145,7 @@ const styles = StyleSheet.create({
     },
     teksCard: {
         textAlign: 'center',
+        marginTop: 5,
         fontSize: 14,
         color: '#fff'
     }
