@@ -21,9 +21,10 @@ export default function Login({ navigation }) {
     <View style={styles.container}>
       <ScrollView>
         <View style={styles.background}>
-          
+          <View style={{alignItems: 'center', justifyContent: 'center', marginTop: 50}}>
+          <Image source={require('../../assets/images/logo.png')} style={styles.logo} />
           <Text style={styles.judul}>NOTE APP</Text>
-
+          </View>
           <View style={styles.inputView}>
             <View style={styles.textInputView}>
               
@@ -68,11 +69,10 @@ const styles = StyleSheet.create({
   background: {
     flex: 1,
     alignItems: 'center',
-
     backgroundColor: '#1E1A3C'
   },
   judul: {
-    marginTop: 170,
+
     marginBottom: 100,
     fontSize: 30,
     fontWeight: 'bold',
@@ -137,5 +137,9 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     margin: 10,
     color: "white",
+  },
+  logo: {
+    height: 100,
+    width: 100
   },
 })

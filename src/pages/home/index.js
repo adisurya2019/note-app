@@ -9,6 +9,7 @@ import Feather from 'react-native-vector-icons/Feather'
 
 const home = ({ navigation }) => {
     const selectItem = (notes) => {
+        navigation.navigate("EDIT")
         console.log('selected item: ', notes);
     }
     const deleteNote = (notes) => {
